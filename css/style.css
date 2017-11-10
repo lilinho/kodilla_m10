@@ -1,0 +1,24 @@
+#carousel {
+    width: 720px;
+    height: 400px;
+    overflow: hidden;
+    border: solid 1px #000;
+}
+
+#carousel img {
+    object-fit: cover;
+}
+#carousel .slides {
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 400px;
+    width: 3600px;
+    
+}
+#carousel .slide {
+    list-style-type: none;
+    float: left;
+    width: 720px;
+    height: 400px;
+}
