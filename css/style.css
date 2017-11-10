@@ -2,7 +2,7 @@
     width: 720px;
     height: 400px;
     overflow: hidden;
-    border: solid 1px #000;
+    position: relative;
 }
 
 #carousel img {
@@ -21,4 +21,19 @@
     float: left;
     width: 720px;
     height: 400px;
+}
+
+#indicators {
+    position: absolute;
+    bottom: 0;
+    left 50%;
+}
+
+#indicators .indicator {
+    float: left;
+    list-style-type: none;
+    padding: 0 10px;
+    height: 5px;
+    width: 10px;
+    background-color: #fff;
 }
