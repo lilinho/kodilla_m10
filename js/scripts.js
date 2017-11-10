@@ -4,8 +4,10 @@ $(function() {
   
     var width = 720,
         speed = 500,
+        currentSlide = 0,
         interval;
     var sliderContainer = $("#carousel .slides");
+    var indicatorsContainer = $("#indicators");
     
     function moveFirstSlide() {
         var first = sliderContainer.find(".slide:first"),
@@ -15,6 +17,7 @@ $(function() {
     }
     function changeSlide() {
         sliderContainer.animate({'marginLeft' : '-='+width}, speed, moveFirstSlide);
+      
     }
     function startSlider() {
         

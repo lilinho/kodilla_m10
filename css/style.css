@@ -26,14 +26,20 @@
 #indicators {
     position: absolute;
     bottom: 0;
-    left 50%;
+    left: 285px;
+    padding: 0;
 }
 
 #indicators .indicator {
     float: left;
     list-style-type: none;
-    padding: 0 10px;
+    margin: 0 5px;
     height: 5px;
-    width: 10px;
+    width: 20px;
     background-color: #fff;
+    opacity: 0.3;
+}
+
+#indicators .indicator:first-child {
+    opacity: 1.0;
 }
