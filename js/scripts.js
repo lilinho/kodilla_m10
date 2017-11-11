@@ -23,7 +23,6 @@ $(function() {
             last = sliderContainer.find(".slide:last");
         first.before(last);
         sliderContainer.css({"marginLeft":-(width)})
-        sliderContainer.animate({'marginLeft' : '+='+width}, speed, moveFirstSlide);
     }
     
     function changeSlide(target, sp) {
@@ -72,6 +71,7 @@ $(function() {
     });
     $('#arrow-left').click(function() {
         moveLastSlide();
+        sliderContainer.animate({'marginLeft' : '+='+width}, speed, moveFirstSlide);
     });
     startSlider();
 })
