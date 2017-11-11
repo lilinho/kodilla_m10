@@ -17,20 +17,20 @@ $(function() {
         sliderContainer.css({"marginLeft":0})
     }
     
-    function changeSlide() {
-        sliderContainer.animate({'marginLeft' : '-='+width}, speed, moveFirstSlide);
-        if(++currentSlide == (indicator.length + 1)){
-            $(".indicator:nth-child(" + (currentSlide - 1) + ")").css('opacity', 0.3);
-            currentSlide = 1;
-            $(".indicator:nth-child(" + currentSlide + ")").css('opacity', 1.0);
+    function changeSlide(target, sp) {
+        sliderContainer.animate({'marginLeft' : '-='+target*width}, sp, moveFirstSlide);
+        $(".indicator:nth-child(" + currentSlide + ")").css('opacity', 0.3);
+        currentSlide = (currentSlide + target) % $('.slide', sliderContainer).length;
+        if (currentSlide == 0) {
+            currentSlide = $('.slide', sliderContainer).length;
         }
-        $(".indicator:nth-child(" + (currentSlide - 1) + ")").css('opacity', 0.3);
         $(".indicator:nth-child(" + currentSlide + ")").css('opacity', 1.0);
-      
+              
     }
+    
     function startSlider() {
         
-        interval = setInterval(changeSlide, 2000);
+        interval = setInterval(function() {changeSlide(1, speed)}, 2000);
         
     }
     
@@ -42,10 +42,9 @@ $(function() {
         .on('mouseenter', stopSlider)
         .on('mouseleave', startSlider);
     indicator.click(function() {
-        var first = sliderContainer.find(".slide:nth-child(" + indicatorsContainer.index(this)  + ")");
-        var last = sliderContainer.find(".slide:last");
-        last.after(first);
-        sliderContainer.css({"marginLeft":0});
+        var target = $(this).attr("index-of") + 1;
+        changeSlide(target, 100);
+        
     });
     startSlider();
 })

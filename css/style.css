@@ -43,3 +43,7 @@
 #indicators .indicator:first-child {
     opacity: 1.0;
 }
+
+#indicators .indicator:hover {
+    cursor: pointer;
+}
