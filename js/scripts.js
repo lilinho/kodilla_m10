@@ -41,9 +41,20 @@ $(function() {
     sliderContainer
         .on('mouseenter', stopSlider)
         .on('mouseleave', startSlider);
+
     indicator.click(function() {
-        var target = $(this).attr("index-of") + 1;
-        changeSlide(target, 100);
+        var target = $(this).attr("index-of") ;
+        if (target > currentSlide) {
+            target = target - currentSlide;
+            for(var i = 1; i < target; i++)
+                moveFirstSlide();
+            changeSlide(target, speed);
+        } else if (target < currentSlide) {
+            target = currentSlide + target;
+            for(var i = 1; i < (target - currentSlide); i++)
+                moveFirstSlide();
+            changeSlide(target, speed);
+        }
         
     });
     startSlider();

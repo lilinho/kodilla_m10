@@ -47,3 +47,31 @@
 #indicators .indicator:hover {
     cursor: pointer;
 }
+
+#arrow-left .fa {
+    color: #fff;
+    opacity: 0.3;
+    font-size: 30px;
+    height: 400px;
+}
+
+#arrow-right .fa {
+    color: #fff;
+    opacity: 0.3;
+    font-size: 30px;
+    height: 400px;
+}
+
+#arrow-left {
+    height: 400px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+}
+
+#arrow-right {
+    height: 400px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
