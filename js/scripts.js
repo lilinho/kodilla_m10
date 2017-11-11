@@ -6,6 +6,7 @@ $(function() {
         speed = 500,
         currentSlide = 1,
         interval;
+    var sliderAll = $("#carousel");
     var sliderContainer = $("#carousel .slides");
     var indicatorsContainer = $("#indicators");
     var indicator = $(".indicator", indicatorsContainer);
@@ -15,6 +16,14 @@ $(function() {
             last = sliderContainer.find(".slide:last");
         last.after(first);
         sliderContainer.css({"marginLeft":0})
+    }
+    
+    function moveLastSlide() {
+        var first = sliderContainer.find(".slide:first"),
+            last = sliderContainer.find(".slide:last");
+        first.before(last);
+        sliderContainer.css({"marginLeft":-(width)})
+        sliderContainer.animate({'marginLeft' : '+='+width}, speed, moveFirstSlide);
     }
     
     function changeSlide(target, sp) {
@@ -38,7 +47,7 @@ $(function() {
         clearInterval(interval);
     }
     
-    sliderContainer
+    sliderAll
         .on('mouseenter', stopSlider)
         .on('mouseleave', startSlider);
 
@@ -56,6 +65,13 @@ $(function() {
             changeSlide(target, speed);
         }
         
+    });
+    
+    $('#arrow-right').click(function() {
+        changeSlide(1, speed);
+    });
+    $('#arrow-left').click(function() {
+        moveLastSlide();
     });
     startSlider();
 })

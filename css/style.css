@@ -50,28 +50,38 @@
 
 #arrow-left .fa {
     color: #fff;
-    opacity: 0.3;
+    opacity: 0.1;
     font-size: 30px;
     height: 400px;
+    transition: opacity .3s
+}
+
+#arrow-left .fa:hover {
+    opacity: 0.8;
 }
 
 #arrow-right .fa {
     color: #fff;
-    opacity: 0.3;
+    opacity: 0.1;
     font-size: 30px;
     height: 400px;
+    transition: opacity .3s
+}
+
+#arrow-right .fa:hover {
+    opacity: 0.8;
 }
 
 #arrow-left {
     height: 400px;
     position: absolute;
     left: 10px;
-    top: 50%;
+    top: 46.25%;
 }
 
 #arrow-right {
     height: 400px;
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 46.25%;
 }
