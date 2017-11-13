@@ -92,14 +92,23 @@ $(function() {
         }
         
     });
-    
+    /*
+    Listener for arrows changing slides.
+    First of all - it hides arrow.
+    Change slide (left or right), and indicator
+    Displays arrow back again AFTER animation is finished
+    */
     $('#arrow-right').click(function() {
+        $(this).css('display', 'none');
         changeSlide(1);
+        setTimeout(function () {$('#arrow-right').css('display', 'block');}, speed);
     });
     $('#arrow-left').click(function() {
+        $(this).css('display', 'none');
         moveLastSlide();
         sliderContainer.animate({'marginLeft' : '+='+width}, speed);
         changeIndicator(-1);
+        setTimeout(function() {$('#arrow-left').css('display', 'block');}, speed);
     });
     startSlider();
 })
