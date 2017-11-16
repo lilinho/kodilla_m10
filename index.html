@@ -3,10 +3,32 @@
    <head>
        <meta charset="utf-8">
        <title>jQuery Carousel</title>
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
        <link rel="stylesheet" type="text/css" href="css/style.css">
    </head>
    <body>
-      
+       <div id="carousel">
+          <ul class="slides">
+             <li class="slide"><img src="https://images.pexels.com/photos/187960/pexels-photo-187960.jpeg?w=720" alt=""></li>
+             <li class="slide"><img src="https://images.pexels.com/photos/189187/pexels-photo-189187.jpeg?w=720" alt=""></li>
+             <li class="slide"><img src="https://images.pexels.com/photos/189513/pexels-photo-189513.jpeg?w=720" alt=""></li>
+             <li class="slide"><img src="https://images.pexels.com/photos/190404/pexels-photo-190404.jpeg?w=720" alt=""></li>
+             <li class="slide"><img src="https://images.pexels.com/photos/191238/pexels-photo-191238.jpeg?w=720" alt=""></li>
+          </ul>
+          <ol id="indicators">
+              <li class="indicator" index-of="1"></li>
+              <li class="indicator" index-of="2"></li>
+              <li class="indicator" index-of="3"></li>
+              <li class="indicator" index-of="4"></li>
+              <li class="indicator" index-of="5"></li>
+          </ol>
+          <div id="arrow-left">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </div>
+          <div id="arrow-right">
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </div>
+       </div>
        
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
        <script type="text/javascript" src="js/scripts.js"></script>
