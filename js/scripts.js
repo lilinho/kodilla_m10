@@ -1,4 +1,3 @@
-
 /*
 jQuery slider. No RWD (for now)
 */
